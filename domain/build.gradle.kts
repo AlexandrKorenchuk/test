@@ -33,7 +33,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":model"))
+    implementation(project(":utils"))
     implementation(libs.androidx.core.ktx)
+    implementation(libs.koin)
+    implementation(libs.rx)
+    implementation(libs.rx.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

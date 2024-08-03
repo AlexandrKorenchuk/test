@@ -41,6 +41,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+    implementation(project(":model"))
+    implementation(project(":core"))
+    implementation(project(":utils"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -50,6 +54,8 @@ dependencies {
     implementation(libs.navComp)
     implementation(libs.navComp.ui)
     implementation(libs.koin)
+    implementation(libs.rx)
+    implementation(libs.rx.android)
     kapt(libs.moxy.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -27,7 +27,13 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     lateinit var presenter: MainPresenter
 
     @ProvidePresenter
-    fun providePresenter() = MainPresenter()
+    fun providePresenter(): MainPresenter = MainPresenter(
+        startBroadcastReceiverUseCase = scope.get(),
+        finishBootReceiverUseCase = scope.get(),
+        saveEventUseCase = scope.get(),
+        interactor = scope.get(),
+        schedulers = scope.get()
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         scope = getKoin().getOrCreateScope(DI_SCOPE_NAME, named(DI_SCOPE_NAME))
@@ -40,7 +46,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         navController = Navigation.findNavController(this, R.id.navHostFragment)
     }
 
-    companion object{
+    companion object {
         const val DI_SCOPE_NAME = "MainScope"
     }
 }
