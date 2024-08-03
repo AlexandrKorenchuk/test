@@ -22,6 +22,7 @@ which will prompt the app to reschedule them accordingly.
 4. Create a database to save data on when the dialog with event information was shown.
 5. Add logic to adjust the display time based on the dialog display count.
 6. Add unit tests.
-7. Added text in string.
-8. Added styles.
-9. etc
+7. Add text in string.
+8. Add styles.
+10. Add ci/cd
+11. etc
